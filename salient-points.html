@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'/>
+<title>Salient points</title>
+<link rel='stylesheet' href='styles.css'/>
+</head>
+
+<p>Override default styles to a predictable value using the “universal” CSS
+selector (*) resetting the margin and padding properties, as well as setting
+all our boxes to border-box, which is best practice:</p>
+
+<code>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+</code>
+
+
+
+<p>&lt;head&gt; tags contain all meta data</p>
+
+<p>&lt;body&gt; tags contains all visible element of page</p>
+
+
+<p><strong>Block elements</strong> are always drawn on a new line</p>
+
+<p><strong>Inline elements</strong> can affect sections of text anywhere within
+  a line</p>
+
+
+<p><strong>Absolute links</strong> contain a full web address</p>
+
+<p><strong>“Relative”</strong> links point to another file in your website from
+   the vantage point of the file you’re editing. It’s implied that the scheme
+   and domain name are the same as the current page, so the only thing you need
+   to supply is the path.</p>
+
+<p><strong>“Root-relative”</strong> links are similar to the previous section,
+  but instead of being relative to the current page, they’re relative to the
+  “root” of the entire website.</p>
+
+
+<p>These days, UTF-8 is sort of like a universal alphabet for the Internet.
+  Every web page you create should have this line in its &lt;head&gt;.</p>
+
+<p>There are three <strong>reserved characters</strong> in HTML: &lt; &gt;
+  and &amp;. You should always use HTML entities for these three characters.</p>
+
+<p>The &lt;link/&gt; element is just like the &lt;a&gt; element, but it’s
+  only meant to be used inside of &lt;head&gt;. Since it’s in the head of
+  the document, &lt;link/&gt; connects to metadata that’s defined outside of
+  the current document. Also notice that it’s an empty element, so it doesn’t
+  need a closing tag.</p>
+
+<p>It’s usually a good idea to use root-relative paths when linking global
+  stylesheets to avoid problems in nested pages. For example,
+  some-folder/page.html would need to use ../styles.css to reference our
+  styles.css file, and this can get real confusing real quick.</p>
+
+
+<p><strong>The CSS hierarchy</strong> for every web page looks like this:</p>
+
+<ul>
+  <li>The browser’s default stylesheet</li>
+  <li>User-defined stylesheets</li>
+  <li>External stylesheets (that’s us)</li>
+  <li>Page-specific styles (that’s also us)</li>
+  <li>Inline styles (that could be us, but it never should be)</li>
+</ul>
+
+<p>Headings are <strong>block elements</strong>, paragraphs are blocks, too.
+  <em>However</em>, &lt;em&gt; and &lt;strong&gt;
+   elements are not. They are <strong>inline</strong> elements.</p>
+
+   <ul>
+
+     <li><p><strong>Block boxes</strong> always appear <strong>below</strong> the
+       previous block element. This is the “natural” or “static” flow of an HTML
+       document when it gets rendered by a web browser.</p></li>
+
+     <li><p>The <strong>width of block boxes</strong> is set automatically based
+       on the width of its parent container. In this case, our blocks are always
+       the width of the browser window.</p></li>
+
+     <li><p>The default <strong>height of block boxes</strong> is based on the
+       content it contains. When you narrow the browser window, the
+       <code>&lt;h1&gt;</code> gets split over two lines, and its height adjusts
+     accordingly.</p></li>
+
+     <li><p><strong>Inline boxes</strong> don’t affect <strong>vertical
+         spacing</strong>. They’re not for determining layout&mdash;they’re for
+       styling stuff <em>inside</em> of a block.</p></li>
+
+     <li><p>The <strong>width of inline boxes</strong> is based on the content it
+       contains, not the width of the parent element.</p></li>
+
+   </ul>
+
+<p>Turn &lt;a&gt; elements into buttons or format &lt;img/&gt; elements by
+  <strong>defining them as block elements</strong> (both of these are inline
+  boxes by default).</p>
+
+<p>The <strong>“CSS box model”</strong> is a set of rules that determine the
+dimensions of every element in a web page. It gives each box (both inline and
+block) four properties:</p>
+
+<ul>
+
+	<li><strong>Content</strong> &ndash; The text, image, or other media
+		content in the element.</li>
+
+  <li><strong>Padding</strong> &ndash; The space between the box’s
+		content and its border.</li>
+
+  <li><strong>Border</strong> &ndash; The line between the box’s padding
+    and margin.</li>
+
+  <li><strong>Margin</strong> &ndash; The space between the box and surrounding
+  boxes.</li>
+
+</ul>
+
+<img src='css-box-model.png' width='500' alt='Css box model'/>
+
+<p><strong>Margins define the space outside of an element’s border</strong>.
+  Or, rather, the space between a box and its surrounding boxes.</p>
+
+<ul>
+  <li>The padding of a box has a background, while margins are always
+    transparent.</li>
+  <li>Padding is included in the click area of an element, while margins
+    aren’t.</li>
+  <li>Margins collapse vertically, while padding doesn’t.</li>
+  <li>One of the starkest contrasts between block-level elements and inline
+    ones is their handling of margins. Inline boxes completely ignore the top
+    and bottom margins of an element.</li>
+
+</ul>
+
+<p>A quirk of the CSS box model is the “vertical margin collapse”. When you
+   have two boxes with vertical margins sitting right next to each other, they
+   will collapse. Instead of adding the margins together like you might expect,
+    only the biggest one is displayed.</p>
+
+<p>Both &lt;div&gt; and &lt;span&gt; are <strong>“container”</strong> elements
+  that don’t have any affect on the semantic structure of an HTML document.
+  They do, however, provide a hook for adding CSS styles to arbitrary sections
+  of a web page.</p>
+
+<p>The width and height properties <strong>only define the size of a box’s
+  content</strong>. Its padding and border are both added on top of whatever
+  explicit dimensions you set.</p>
+
+<img src='box-sizing-content-box.png' width='500' alt='Css box model'/>
+
+<p>When you set the left and right margin of a block-level element to auto,
+  it will <strong>center the block in its parent element</strong>.</p>
+
+<p>The CSS <strong>type selector</strong> selects all elements of the given type
+  within a document.</p>
+
+<p><strong>Class selectors</strong> let you apply CSS styles to a specific HTML
+  element. They let you differentiate between HTML elements of the same type.</p>
+
+<p>When there’s two conflicting properties in a CSS file, the <strong>last one
+  is always the one that gets applied.</strong></p>
+
+<p><strong>Descendant selectors</strong> let you target only those elements that
+   are inside of another element. For example, we can pull out that &lt;em&gt; in the
+  .synopsis paragraph with the following:</p>
+  <code>
+  .synopsis em {
+    font-style: normal;
+  }
+</code>
+
+<p>The most common <strong>link pseudo-classes</strong> are as follows:</p>
+
+<ul>
+  <li><strong>:link</strong> – A link the user has never visited.</li>
+  <li><strong>:visited</strong> – A link the user has visited before.</li>
+  <li><strong>:hover</strong> – A link with the user’s mouse over it.</li>
+  <li><strong>:active</strong> – A link that’s being pressed down by a mouse (or finger).</li>
+</ul>
+
+  </body>
+</html>
