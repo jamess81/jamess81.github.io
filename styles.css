@@ -4,6 +4,15 @@ body {
   font-size: 18px;
 }
 
+.centerDiv {
+  
+  text-align: center;
+  width:80%;
+  margin:0 auto;
+  background:cyan;
+
+}
+
 h1 {
   font-size: 2em;
 }
