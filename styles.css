@@ -48,3 +48,10 @@ p {
 strong {
   color: #414242;
 }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
