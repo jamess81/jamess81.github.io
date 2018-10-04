@@ -2,11 +2,13 @@ body {
   color: #555555;               /* Dark gray */
   background-color: #F1F1F1;    /* Light gray */
   font-size: 18px;
+  background-color: #d8d8d8
 }
 
 .centerDiv {
    width:50%;
    margin:0 auto;
+   background-color: #F1F1F1;
 }
 
 h1 {
