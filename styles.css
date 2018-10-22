@@ -1,4 +1,6 @@
 body {
+  
+  margin: 0px !important;
   color: #555555;               /* Dark gray */
   background-color: #F1F1F1;    /* Light gray */
   font-size: 18px;
