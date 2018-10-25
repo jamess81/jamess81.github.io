@@ -57,3 +57,11 @@ strong {
     margin-right: auto;
     width: 50%;
 }
+
+@media only screen and (max-width: 700px) {
+    .centerDiv {
+   width:100%;
+   padding:0px;
+   
+   }
+}
